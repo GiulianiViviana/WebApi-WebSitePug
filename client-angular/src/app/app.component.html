@@ -1,0 +1,11 @@
+ <h1>Products</h1>
+  <h3> Il super negozio di super prodotti</h3>
+  <button (click)="ngOnInit()">Cliccami per vedere la lista dei prodotti</button>
+  <div *ngFor = "let p of prodotto">
+  <h4>{{p.productName}}</h4>
+  <h2>{{p.supplier}}</h2>
+  <h2>{{p.quantity}}</h2>
+  <h2>{{p.unit_cost}}</h2>
+  </div>
+
+
