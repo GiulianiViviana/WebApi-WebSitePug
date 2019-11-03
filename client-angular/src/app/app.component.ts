@@ -8,16 +8,16 @@ import {HttpClient} from '@angular/common/http';
 })
 export class AppComponent {
   title = 'Products';
-  prodotto:Products[];
-  private BASE_URL:string = '/products';
+  products:Products[];
+  private BASE_URL:string = '/api';
 
   constructor(private http: HttpClient) {}
 
-     ngOnInit(): void {
-
-      this.http.get('https://3000-f3624264-e3b4-46ce-bc26-c9e4139daf7c.ws-eu0.gitpod.io/api/products').subscribe(data => {
-        this.prodotto = data['products'];
+      getProdotti(): void {
+      this.http.get<Products[]>('https://3000-e93a3747-c691-47ec-bea4-3bea982d8e89.ws-eu0.gitpod.io/products').subscribe(data => {
+        this.products = data;
       });
+
     }
 
 }
